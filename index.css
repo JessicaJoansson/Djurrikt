@@ -1,0 +1,123 @@
+html, body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', Arial, sans-serif;
+  background-color: rgb(136, 194, 138);
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+}
+
+#map {
+ width: 50vw; 
+ height: 100vh;
+}
+
+.sidebar {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.animal {
+  width: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.2s;
+}
+
+.animal:hover {
+  transform: scale(1.05);
+}
+.layout {
+  display: flex;
+  height: 100vh; /* Fyll hela höjden */
+}
+
+/* Karta 50% */
+#map {
+  width: 50%;
+  height: 100%;
+}
+
+/* Djuren 50% */
+.animal-grid { 
+    width: 50vw; 
+    height: 100vh; 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); /* 2 djur per rad */
+     gap: 5px; padding: 5px; 
+     box-sizing: border-box; 
+     overflow-y: auto; /* ifall det blir många djur */ }
+
+/* Djurbilderna */
+.animal {
+  width: 100%;
+  max-width: 150px; /* Gör dem mindre */
+  justify-self: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.animal:hover {
+  transform: scale(1.1);
+}
+-------------------------------------------------------------
+/*POPUP CSS SOM STYLAR UTSEEN PÅ POPUPFÖNSTERNA FÖR DJUREN*/
+-------------------------------------------------------------
+/* Popupens container */
+.animal-popup {
+  max-width: 350px;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+/* 4 små bilder högst upp */
+.animal-top-images {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.animal-top-images img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+/* Textblock i mitten */
+.animal-info {
+  background: #7A9B76;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 17px;
+}
+
+/* Stor bild under texten */
+.animal-main-image img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+/* Videolänk längst ner */
+.animal-video a {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  background: #4a8cff;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.animal-video a:hover {
+  background: #2f6fe0;
+}
+

@@ -1,0 +1,38 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #a9e785;
+    display: flex;
+    justify-content: center; /* Centrera innehållet horisontellt */
+}
+
+li {
+    margin: 0 10px; /* Lite mellanrum mellan menyobjekt */
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 30px 35px; /* Lite större klickyta */
+    text-decoration: none;
+    font-size: 25px; /* Större text */
+}
+
+li a:hover {
+    background-color: #79c479;
+}
+
+body {
+    font-family:'Nunito' Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}

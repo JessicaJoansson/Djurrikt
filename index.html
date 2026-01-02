@@ -2,20 +2,49 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Djur i Sveriges län</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <style>
-    #map { height: 600px; }
-  </style>
-</head>
-<body style="background-color: rgb(190, 224, 224);">
-  <h2>Djur i Sveriges län</h2>
-  <div id="map"></div>
+  <title>Djur i Sverige</title>
 
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <!-- Leaflet CSS + JS (jsDelivr, fungerar i Edge) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Typsnitt och egna stilar -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="meny.css" />
+  <link rel="stylesheet" href="index.css"/>
+</head>
+
+<body style="font-family: 'Nunito', sans-serif;">
+
+  <!-- Meny -->
+  <ul>
+    <li><a href="start.html">Startsida</a></li>
+    <li><a href="Djurrikt.html">Djur Spel</a></li>
+    <li><a href="index.html">Djur i Sverige</a></li>
+    <li><a href="hitta.html">Sök</a></li>
+  </ul>
+
+  <h2>Vilda djur i Sverige</h2>
+
+  <div class="layout">
+    <!-- Karta -->
+    <div id="map"></div>
+
+    <!-- Djurmeny -->
+    <div class="animal-grid">
+      <img src="img/alg.png" class="animal" onclick="showAnimal('alg')">
+      <img src="img/bjorn.png" class="animal" onclick="showAnimal('bjorn')">
+      <img src="img/fjallrav.png" class="animal" onclick="showAnimal('fjallrav')">
+      <img src="img/gravling.png" class="animal" onclick="showAnimal('gravling')">
+      <img src="img/jarv.png" class="animal" onclick="showAnimal('jarv')">
+      <img src="img/lo.png" class="animal" onclick="showAnimal('lo')">
+      <img src="img/nabbmus.png" class="animal" onclick="showAnimal('nabbmus')">
+      <img src="img/vildsvinet.png" class="animal" onclick="showAnimal('vildsvin')">
+    </div>
+  </div>
+
+  <!-- Din JavaScript-fil -->
   <script src="script.js"></script>
+
 </body>
 </html>
-
-
-
