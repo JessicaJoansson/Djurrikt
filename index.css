@@ -1,4 +1,7 @@
-html, body{
+//* ===========================
+   GLOBALT
+=========================== */
+html, body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -6,77 +9,70 @@ html, body{
   background-color: rgb(136, 194, 138);
 }
 
-.container {
-  display: flex;
-  gap: 20px;
-}
-
-#map {
- width: 50vw; 
- height: 100vh;
-}
-
-.sidebar {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.animal {
-  width: 100%;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: transform 0.2s;
-}
-
-.animal:hover {
-  transform: scale(1.05);
-}
+/* ===========================
+   LAYOUT
+=========================== */
 .layout {
   display: flex;
-  height: 100vh; /* Fyll hela höjden */
+  height: 100vh;
 }
 
-/* Karta 50% */
+/* ===========================
+   POPUP-PANEL (vänster sida)
+=========================== */
+#popup-panel {
+  width: 350px;
+  background: #7A9B76;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  border-right: 4px solid #3A5A40;
+  color: #2d3e2f;
+}
+
+#popup-panel h2 {
+  margin-top: 0;
+  font-size: 26px;
+  text-align: center;
+  color: #2d3e2f;
+}
+
+/* ===========================
+   KARTA (mitten)
+=========================== */
 #map {
-  width: 50%;
-  height: 100%;
+  flex-grow: 1; /* Gör att kartan fyller allt utrymme mellan panel och meny */
+  height: 100vh;
+  position: relative;
+  z-index: 2;
 }
 
-/* Djuren 50% */
+/* ===========================
+   DJURMENY (höger sida)
+=========================== */
 .animal-grid { 
-    width: 50vw; 
-    height: 100vh; 
-    display: grid; 
-    grid-template-columns: repeat(2, 1fr); /* 2 djur per rad */
-     gap: 5px; padding: 5px; 
-     box-sizing: border-box; 
-     overflow-y: auto; /* ifall det blir många djur */ }
-
-/* Djurbilderna */
-.animal {
-  width: 100%;
-  max-width: 150px; /* Gör dem mindre */
-  justify-self: center;
-  cursor: pointer;
-  transition: transform 0.2s;
+  width: 35%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  justify-content: center;
+  gap: 1px;
+  padding: 1px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  position: relative;
+  z-index: 1;
 }
 
-.animal:hover {
-  transform: scale(1.1);
-}
--------------------------------------------------------------
-/*POPUP CSS SOM STYLAR UTSEEN PÅ POPUPFÖNSTERNA FÖR DJUREN*/
--------------------------------------------------------------
-/* Popupens container */
+/* ===========================
+   POPUP-INNEHÅLL
+=========================== */
 .animal-popup {
-  max-width: 350px;
+  max-width: 100%;
   font-size: 18px;
   line-height: 1.4;
 }
 
-/* 4 små bilder högst upp */
 .animal-top-images {
   display: flex;
   justify-content: space-between;
@@ -89,28 +85,25 @@ html, body{
   object-fit: contain;
 }
 
-/* Textblock i mitten */
 .animal-info {
-  background: #7A9B76;
+  background: #99ee99;
   padding: 12px;
   border-radius: 8px;
   margin-bottom: 12px;
   font-size: 17px;
 }
 
-/* Stor bild under texten */
 .animal-main-image img {
   width: 100%;
   border-radius: 10px;
   margin-bottom: 12px;
 }
 
-/* Videolänk längst ner */
 .animal-video a {
   display: block;
   text-align: center;
   padding: 10px;
-  background: #4a8cff;
+  background: #3A5A40;
   color: white;
   border-radius: 8px;
   text-decoration: none;
@@ -118,6 +111,64 @@ html, body{
 }
 
 .animal-video a:hover {
-  background: #2f6fe0;
+  background: #26412b;
 }
 
+/* ===========================
+   DJURMENY – LAPPDESIGN
+=========================== */
+
+.animal-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+  padding: 5px;
+}
+
+.animal-card:hover {
+  transform: scale(1.05);
+}
+
+/* Själva lappen */
+.note-background {
+  width: 180px;
+  height: 180px;
+  background-image: url('img/lapp.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  position: relative;
+}
+
+/* Djurets ikon */
+.animal-icon {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+}
+
+/* Djurets namn */
+.animal-name-on-note {
+  margin-top: 2px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #2d3e2f;
+  text-align: center;
+}
+
+/* Lätt rotation för naturlig känsla */
+.animal-card:nth-child(1) .note-background { transform: rotate(-3deg); }
+.animal-card:nth-child(2) .note-background { transform: rotate(2deg); }
+.animal-card:nth-child(3) .note-background { transform: rotate(-1deg); }
+.animal-card:nth-child(4) .note-background { transform: rotate(4deg); }
+.animal-card:nth-child(5) .note-background { transform: rotate(-2deg); }
+.animal-card:nth-child(6) .note-background { transform: rotate(3deg); }
+.animal-card:nth-child(7) .note-background { transform: rotate(-4deg); }
+.animal-card:nth-child(8) .note-background { transform: rotate(1deg); }

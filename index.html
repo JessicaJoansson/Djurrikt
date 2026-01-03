@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8" />
   <title>Djur i Sverige</title>
 
-  <!-- Leaflet CSS + JS (jsDelivr, fungerar i Edge) -->
+  <!-- Leaflet CSS + JS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
 
@@ -18,32 +18,88 @@
 
   <!-- Meny -->
   <ul>
-    <li><a href="start.html">Startsida</a></li>
-    <li><a href="Djurrikt.html">Djur Spel</a></li>
-    <li><a href="index.html">Djur i Sverige</a></li>
-    <li><a href="hitta.html">Sök</a></li>
+    <li><a href="start.html" class="menu-start"><img src="img/Startidan.png" alt="Startsida"></a></li>
+    <li><a href="index.html" class="menu-start"><img src="img/djurisverige2.png" alt="Djur i Sverige"></a></li>
+    <li><a href="Djurrikt.html" class="menu-start"><img src="img/djurspel.png" alt="Djur Spel"></a></li>
+    <li><a href="hitta.html" class="menu-start"><img src="img/sök.png" alt="Sök"></a></li>
   </ul>
 
   <h2>Vilda djur i Sverige</h2>
 
+  <!-- ===========================
+       NY LAYOUT: PANEL + KARTA + MENY
+       =========================== -->
   <div class="layout">
+
+    <!-- Popup-panel (NY) -->
+    <div id="popup-panel"></div>
+
     <!-- Karta -->
     <div id="map"></div>
 
     <!-- Djurmeny -->
     <div class="animal-grid">
-      <img src="img/alg.png" class="animal" onclick="showAnimal('alg')">
-      <img src="img/bjorn.png" class="animal" onclick="showAnimal('bjorn')">
-      <img src="img/fjallrav.png" class="animal" onclick="showAnimal('fjallrav')">
-      <img src="img/gravling.png" class="animal" onclick="showAnimal('gravling')">
-      <img src="img/jarv.png" class="animal" onclick="showAnimal('jarv')">
-      <img src="img/lo.png" class="animal" onclick="showAnimal('lo')">
-      <img src="img/nabbmus.png" class="animal" onclick="showAnimal('nabbmus')">
-      <img src="img/vildsvinet.png" class="animal" onclick="showAnimal('vildsvin')">
+
+      <div class="animal-card" onclick="showAnimal('alg')">
+        <div class="note-background">
+          <img src="img/alg.png" class="animal-icon" alt="Älg">
+          <p class="animal-name-on-note">Älg</p>
+        </div>
+      </div>
+
+      <div class="animal-card" onclick="showAnimal('bjorn')">
+        <div class="note-background">
+          <img src="img/bjorn.png" class="animal-icon" alt="Björn">
+          <p class="animal-name-on-note">Björn</p>
+        </div>
+      </div>
+
+      <div class="animal-card" onclick="showAnimal('fjallrav')">
+        <div class="note-background">
+          <img src="img/fjallrav.png" class="animal-icon" alt="Fjällräv">
+          <p class="animal-name-on-note">Fjällräv</p>
+        </div>
+      </div>
+
+      <div class="animal-card" onclick="showAnimal('gravling')">
+        <div class="note-background">
+          <img src="img/gravling.png" class="animal-icon" alt="Grävling">
+          <p class="animal-name-on-note">Grävling</p>
+        </div>
+      </div>
+
+      <div class="animal-card" onclick="showAnimal('jarv')">
+        <div class="note-background">
+          <img src="img/jarv.png" class="animal-icon" alt="Järv">
+          <p class="animal-name-on-note">Järv</p>
+        </div>
+      </div>
+
+      <div class="animal-card" onclick="showAnimal('lo')">
+        <div class="note-background">
+          <img src="img/lo.png" class="animal-icon" alt="Lodjur">
+          <p class="animal-name-on-note">Lodjur</p>
+        </div>
+      </div>
+
+      <div class="animal-card" onclick="showAnimal('nabbmus')">
+        <div class="note-background">
+          <img src="img/nabbmus.png" class="animal-icon" alt="Näbbmus">
+          <p class="animal-name-on-note">Näbbmus</p>
+        </div>
+      </div>
+
+      <div class="animal-card" onclick="showAnimal('vildsvin')">
+        <div class="note-background">
+          <img src="img/vildsvinet.png" class="animal-icon" alt="Vildsvin">
+          <p class="animal-name-on-note">Vildsvin</p>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <!-- Din JavaScript-fil -->
+  <!-- JavaScript -->
   <script src="script.js"></script>
 
 </body>

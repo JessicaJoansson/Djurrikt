@@ -1,8 +1,18 @@
+.menu-start img {
+  width: 160px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.menu-start:hover img {
+  transform: scale(1.15);   /* samma hover-känsla som text */
+}
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: #a9e785;
+    background-color: #fffffe;
     display: flex;
     justify-content: center; /* Centrera innehållet horisontellt */
 }
@@ -21,18 +31,23 @@ li a {
 }
 
 li a:hover {
-    background-color: #79c479;
+    background-color: #d3dfd3;
 }
 
-body {
+.startpage{
     font-family:'Nunito' Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-image: url('img/background.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #000;
 }
 
 .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 70%;
 }

@@ -1,0 +1,14 @@
+.note-background {
+  width: 250px;
+  height: 250px;
+  background-image: url('img/lapp.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column; /* viktigt! */
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  position: relative;
+}
