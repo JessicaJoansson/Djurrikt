@@ -134,7 +134,7 @@ lo: {
   `,
   image: "img/barnåvildsvin.png",
   video: "https://www.youtube.com/watch?v=FfWjnuBFu_8",
-  marker:"img/loskylt.png"
+  marker:"img/lodjurskylt.png"
 },
 nabbmus: {
   name: "Näbbmus",
