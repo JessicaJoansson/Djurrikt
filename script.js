@@ -1,3 +1,4 @@
+let lastSelectedCounty = null;
 let geojsonData = null;
 console.log("geojsonData är nu satt", geojsonData);
 
@@ -10,6 +11,13 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© OpenStreetMap'
 }).addTo(map);
 
+
+document.getElementById("popup-panel").innerHTML = `
+  <div class="instruction">
+    <img src="img/Instruktion.png" class="instruction-image">
+   
+  </div>
+`;
 
 // ------------------------------------------------------
 // 2. Ladda GeoJSON (polygoner + popup)
@@ -56,7 +64,7 @@ function EachFeature(feature, layer) {
 const animals = {
   vildsvin: {
     name: "Vildsvin",
-    icons:["img/ettvildsvin.png","img/vildsvinsspår.png","img/Vildsvinsbajs.png","img/icon4.png"],
+    icons:["img/ettvildsvin.png","img/vildsvinsspar.png","img/Vildsvinsbajs.png","img/vildsvinsbaby.png"],
     text: `
       <strong>Storlek:</strong> Hanarna kan bli 1,8m långa och 1,1m höga<br>
       <strong>Vikt:</strong> Hanar ca 200kg, honorna är lite lättare.<br>
@@ -71,7 +79,7 @@ const animals = {
 
   alg: {
     name: "Älg",
-    icons:["img/realalg.png","img/icon2.png","img/icon3.png","img/icon4.png"],
+    icons:["img/realalg.png","img/algspar.png","img/algbajs.png","img/algbaby.jpeg"],
     text: `
       <strong>Storlek:</strong> Mankhöjd upp till 200cm<br>
       <strong>Vikt:</strong> 200-700kg<br>
@@ -85,7 +93,7 @@ const animals = {
   },
   bjorn: {
   name: "Björn",
-  icons:["img/realbjorn.png","img/icon2.png","img/icon3.png","img/icon4.png"],
+  icons:["img/realbjorn.png","img/bjornspar.png","img/bjornbajs.png","img/bjornbaby.jpeg"],
   text: `
     <strong>Storlek:</strong> Höjd På alla 4:ca 135cm, på bakbenen 100-280cm <br>
     <strong>Vikt:</strong> Hona 60-100kg, hane: 100-340kg<br>
@@ -99,7 +107,7 @@ const animals = {
 },
 fjallrav: {
   name: "Fjällräv",
-  icons:["img/realfjallrav.png","img/icon2.png","img/icon3.png","img/icon4.png"],
+  icons:["img/realfjallrav.png","img/fjallravsspar.png","img/fjallravbajs.png","img/fjallravbaby.png"],
   text: `
     <strong>Storlek:</strong> Kroppen är 41-68cm lång och svansen 26-50cm.<br>
     <strong>Vikt:</strong> 1,5-8 kg<br>
@@ -107,13 +115,13 @@ fjallrav: {
     <strong>Föda:</strong>Smådjur som lämlar och fåglar. På sommaren äter den även bär och på vintern är döda djur viktiga för att den ska överleva<br>
     <strong>Rolig fakta:</strong> Fjällräven är anpassad för att leva i kalla klimat och kan tack vare sin tjocka päls klara sig bra i kyla så kallt som till -40 grader.<br>
   `,
-  image: "img/barnafrallravm.png",
+  image: "img/barnafjallravm.png",
   video: "https://www.youtube.com/watch?v=ORH9jlWugdc",
   marker:"img/fjallravskylt.png"
 },
 gravling: {
   name: "Grävling",
-  icons:["img/realgravling.png","img/icon2.png","img/icon3.png","img/icon4.png"],
+  icons:["img/realgravling.png","img/gravlingsspar.png","img/gravlingbajs.png","img/gravlingbaby.jpeg"],
   text: `
     <strong>Storlek:</strong> Längd 60-90cm<br>
     <strong>Vikt:</strong> 7-15 kg<br>
@@ -127,7 +135,7 @@ gravling: {
 },
 lo: {
   name: "Lo",
-  icons:["img/reallodjur.png","img/icon2.png","img/icon3.png","img/icon4.png"],
+  icons:["img/reallodjur.png","img/lodjursspar.png","img/lodjurbajs.png","img/lobaby.png"],
   text: `
     <strong>Storlek:</strong>Längd: 70-115cm Höjd: 60-70cm<br>
     <strong>Vikt:</strong> 15-30 kg<br>
@@ -141,7 +149,7 @@ lo: {
 },
 nabbmus: {
   name: "Näbbmus",
-  icons:["img/realnabbmus.png","img/icon2.png","img/icon3.png","img/icon4.png"],
+  icons:["img/realnabbmus.png","img/nabbmusspar.png","img/nabbmusbajs.png","img/nabbmusbaby.jpeg"],
   text: `
     <strong>Storlek:</strong> Kroppen är 5,4-8,7cm och svansen är 3,2-5,6cm (60-80% av näbbmusens längd)<br>
     <strong>Vikt:</strong> 50–150 kg<br>
@@ -155,7 +163,7 @@ nabbmus: {
 },
 jarv: {
   name: "Järv",
-  icons:["img/realjarv.png","img/icon2.png","img/icon3.png","img/icon4.png"],
+  icons:["img/realjarv.png","img/jarvspar.png","img/jarvbajs.png","img/jarvbaby.png"],
   text: `
     <strong>Storlek:</strong>Den är 35-45cm hög<br>
     <strong>Vikt:</strong> 50–150 kg<br>
@@ -247,15 +255,15 @@ function showAnimal(key) {
 
 
 // ------------------------------------------------------
-// 6. Funktion: Visa popup-innehåll i vänster panel
+// 6. Funktion: Visa popup-innehåll
 // ------------------------------------------------------
 function showAnimalInPanel(info) {
 
   const iconHtml = (info.icons || [])
     .map(src => `<img class="popup-icon" src="${src}">`)
-
-
     .join("");
+
+  const embedUrl = info.video.replace("watch?v=", "embed/");
 
   const html = `
     <div class="animal-popup">
@@ -263,14 +271,20 @@ function showAnimalInPanel(info) {
       <div class="animal-top-images">${iconHtml}</div>
       <div class="animal-info">${info.text}</div>
       <div class="animal-main-image"><img src="${info.image}"></div>
+
       <div class="animal-video">
-        <a href="${info.video}" target="_blank">Se video om ${info.name}</a>
+        <iframe 
+          src="${embedUrl}"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
       </div>
     </div>
   `;
 
   document.getElementById("popup-panel").innerHTML = html;
 }
+
 
 function showAnimalsInCounty(feature) {
 

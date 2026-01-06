@@ -17,41 +17,10 @@ html, body {
   height: 100vh;
 }
 
-/* ===========================
-   POPUP-PANEL (vänster sida)
-=========================== */
-#popup-panel {
-  width: 350px;
-  background: #7A9B76;
-  padding: 20px;
-  box-sizing: border-box;
-  overflow-y: auto;
-  border-right: 4px solid #3A5A40;
-  color: #2d3e2f;
-}
-
-#popup-panel h2 {
-  margin-top: 0;
-  font-size: 26px;
-  text-align: center;
-  color: #2d3e2f;
-}
-
-/* ===========================
-   KARTA (mitten)
-=========================== */
-#map {
-  flex-grow: 1; /* Gör att kartan fyller allt utrymme mellan panel och meny */
-  height: 100vh;
-  position: relative;
-  z-index: 2;
-}
-
-/* ===========================
-   DJURMENY (höger sida)
-=========================== */
+/* /* Djurmeny – vänster */
 .animal-grid { 
   width: 20%;
+  order: 1;
   height: 100vh;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
@@ -62,6 +31,30 @@ html, body {
   overflow-y: auto;
   position: relative;
   z-index: 1;
+  background: rgba(255, 255, 255, 0.3);/*grön transparent bakgrund, 50% opacitet*/
+  backdrop-filter: blur(3px);
+}
+
+/* Popup-panel – mitten */
+#popup-panel {
+  width: 40%;
+  order: 2;
+  background: #7A9B76;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  border-right: 4px solid #3A5A40;
+  color: #2d3e2f;
+  max-height: 100vh;
+}
+
+/* Karta – höger */
+#map {
+  width: 40%;
+  order: 3;
+  height: 100vh;
+  position: relative;
+  z-index: 2;
 }
 
 /* ===========================
@@ -95,6 +88,9 @@ html, body {
 
 .animal-main-image img {
   width: 100%;
+  max-width: 260px;
+  height: auto;
+  display: block;
   border-radius: 10px;
   margin-bottom: 12px;
 }
@@ -125,6 +121,18 @@ html, body {
   transform: scale(2.5) rotate(-2deg);
   z-index: 10;
   position: relative;
+}
+
+.instruction {
+  text-align: center;
+  padding: 20px;
+}
+
+.instruction-image {
+  max-width: 100%;
+  height: auto;
+  display:block;
+  margin: 0 auto;
 }
 
 
@@ -220,4 +228,17 @@ html, body {
   width: 40px;
   height: 40px;
   object-fit: contain;
+}
+
+/*media query för mindre skärmar*/
+@media (max-width: 900px) {
+  .animal-main-image img {
+    max-width: 200px;
+  }
+}
+/*mycket små skärmar*/
+@media (max-width: 600px) {
+  .animal-main-image img {
+    max-width: 170px;
+  }
 }
