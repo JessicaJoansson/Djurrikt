@@ -113,6 +113,20 @@ html, body {
 .animal-video a:hover {
   background: #26412b;
 }
+.popup-icon {
+  width: 55px;
+  height: 55px;
+  transition: transform 0.25s ease;
+  transform-origin: center;
+  object-fit: contain;
+}
+
+.popup-icon:hover {
+  transform: scale(2.5) rotate(-2deg);
+  z-index: 10;
+  position: relative;
+}
+
 
 /* ===========================
    DJURMENY – LAPPDESIGN
@@ -151,8 +165,16 @@ html, body {
 .animal-icon {
   width: 55px;
   height: 55px;
+  transition: transform 0.25s ease;
+  transform-origin: center;
   object-fit: contain;
 }
+
+.animal-icon:hover {
+  transform: none;
+
+}
+
 
 /* Djurets namn */
 .animal-name-on-note {
@@ -172,3 +194,30 @@ html, body {
 .animal-card:nth-child(6) .note-background { transform: rotate(3deg); }
 .animal-card:nth-child(7) .note-background { transform: rotate(-4deg); }
 .animal-card:nth-child(8) .note-background { transform: rotate(1deg); }
+
+.county-animal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.county-animal-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #8FBF8F;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.county-animal-item:hover {
+  transform: scale(1.03);
+}
+
+.county-animal-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}

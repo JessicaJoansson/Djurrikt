@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<title>Para ihop</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="meny.css" />
+<link rel="stylesheet" href="paraihop.css">
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<body class="startpage">
+<ul>
+<li><a href="start.html" class="menu-start">
+  <img src="img/Startidan.png" alt="Startsida"></a></li>
+  <li><a href="index.html" class="menu-start">
+  <img src="img/djurisverige2.png" alt="Djur i Sverige">
+  </a></li>
+  <li><a href="ValjSpel.html" class="menu-start">
+  <img src="img/djurspel.png" alt="Djur Spel"></a></li>
+  <li><a href="hitta.html" class="menu-start">
+  <img src="img/sök.png" alt="Sök"></a></li>
+ </ul>
+</head>
+
+<body>
+ <h1 style="text-align: center;">Matcha tassavtryck med rätt djur</h1>
+<div class="game-container">
+<div class="row draggables">
+<div class="item" draggable="true" id="tass-lo" data-match="lo">
+<img src="img/lodjursspar.png" alt="Tass 1" width="100">
+</div>
+<div class="item" draggable="true" id="tass-alg" data-match="alg">
+<img src="img/algspar.png" alt="Tass 2" width="100">
+</div>
+<div class="item" draggable="true" id="tass-bjorn" data-match="bjorn">
+<img src="img/bjornspar.png" alt="Tass 3" width="100">
+</div>
+<div class="item" draggable="true" id="tass-fjallrav" data-match="fjallrav">
+<img src="img/fjallravsspar.png" alt="Tass 4" width="100">
+</div>
+<div class="item" draggable="true" id="tass-gravling" data-match="gravling">
+<img src="img/gravlingsspar.png" alt="Tass 5" width="100">
+</div>
+<div class="item" draggable="true" id="tass-nabbmus" data-match="nabbmus">
+<img src="img/nabbmusspar.png" alt="Tass 6" width="100">
+</div>
+<div class="item" draggable="true" id="tass-vildsvin" data-match="vildsvin">
+<img src="img/vildsvinsspar.png" alt="Tass 7" width="100">
+</div>
+<div class="item" draggable="true" id="tass-jarv" data-match="jarv">
+<img src="img/jarvspar.png" alt="Tass 8" width="100">
+</div>
+</div>
+
+<div class="row targets">
+<div class="dropzone" data-animal="lo"><img src="img/reallodjur.png" width="150"></div>
+<div class="dropzone" data-animal="bjorn"><img src="img/realbjorn.png" width="150"></div>
+<div class="dropzone" data-animal="alg"><img src="img/realalg.png" width="150"></div>
+<div class="dropzone" data-animal="gravling"><img src="img/realgravling.png" width="150"></div>
+<div class="dropzone" data-animal="jarv"><img src="img/realjarv.png" width="150"></div>
+<div class="dropzone" data-animal="vildsvin"><img src="img/realvildsvin.png" width="150"></div>
+<div class="dropzone" data-animal="fjallrav"><img src="img/realfjallrav.png" width="150"></div>
+<div class="dropzone" data-animal="nabbmus"><img src="img/realnabbmus.png" width="150"></div>
+</div></div>
+
+<div style="display: flex; justify-content: center; margin-top: 50px;">
+
+<a href="ParaIhop.html">
+<img src="img/SpelaIgen.png" width="200" style="border-radius: 10px;" alt="Spel 1">
+</a>
+</div>
+
+<div id="win-modal" class="modal-overlay">
+<div class="modal-content">
+<h2>GRATTIS!</h2>
+<p>Du klarade det!</p>
+<button onclick="closeModal()" class="modal-btn">Spela igen</button>
+</div>
+</div>
+
+<script src="paraihop.js"></script>
+
+</body>
+</html>

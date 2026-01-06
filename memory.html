@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+ <meta charset="utf-8" />
+ <title>Memory</title>
+ <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+ <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="meny.css" />
+ <link rel="stylesheet" href="memory.css">
+ <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<body class="startpage">
+  
+ <ul>
+ <li><a href="start.html" class="menu-start">
+ <img src="img/Startidan.png" alt="Startsida"></a></li>
+ <li><a href="index.html" class="menu-start">
+ <img src="img/djurisverige2.png" alt="Djur i Sverige">
+ </a></li>
+ <li><a href="ValjSpel.html" class="menu-start">
+ <img src="img/djurspel.png" alt="Djur Spel"></a></li>
+ <li><a href="hitta.html" class="menu-start">
+ <img src="img/sök.png" alt="Sök"></a></li>
+ </ul>
+  
+</head>
+<body>
+
+ <h1>Hitta paren</h1>
+ <div class="stats">
+ Par hittade: <span id="score">0</span> / <span id="total">0</span>
+ </div>
+    
+ <div class="game-container" id="game-board"></div>
+    
+ <div style="display: flex; justify-content: center; margin-top: 50px;">
+ <a href="memory.html">
+ <img src="img/SpelaIgen.png" width="200" style="border-radius: 10px;" alt="Spel 1">
+</a>
+</div>
+
+<div id="win-modal" class="modal-overlay">
+ <div class="modal-content">
+ <h2>GRATTIS!</h2>
+ <p>Du klarade det!</p>
+ <button onclick="closeModal()" class="modal-btn">Spela igen</button>
+</div>
+</div>
+
+<script src="memory.js"></script>
+
+</body>
+</html>

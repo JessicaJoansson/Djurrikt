@@ -39,11 +39,14 @@ fetch("lan_med_djur.json")
 // 3. Funktion för varje län (osynliga polygoner)
 // ------------------------------------------------------
 function EachFeature(feature, layer) {
-  layer.setStyle({
-    fillColor: "transparent",
-    color: "transparent",
-    weight: 0
-  });
+ layer.setStyle({
+  fillColor: "#ffffff00", // genomskinlig men klickbar
+  color: "#ffffff00",
+  weight: 1
+});
+  layer.on("click", () => {
+    showAnimalsInCounty(feature);
+});
 }
 
 
@@ -53,7 +56,7 @@ function EachFeature(feature, layer) {
 const animals = {
   vildsvin: {
     name: "Vildsvin",
-    icons:["img/icon1.png","img/icon2.png","img/icon3.png","img/icon4.png"],
+    icons:["img/ettvildsvin.png","img/vildsvinsspår.png","img/Vildsvinsbajs.png","img/icon4.png"],
     text: `
       <strong>Storlek:</strong> Hanarna kan bli 1,8m långa och 1,1m höga<br>
       <strong>Vikt:</strong> Hanar ca 200kg, honorna är lite lättare.<br>
@@ -82,7 +85,7 @@ const animals = {
   },
   bjorn: {
   name: "Björn",
-  icons:["img/icon1.png","img/icon2.png","img/icon3.png","img/icon4.png"],
+  icons:["img/realbjorn.png","img/icon2.png","img/icon3.png","img/icon4.png"],
   text: `
     <strong>Storlek:</strong> Höjd På alla 4:ca 135cm, på bakbenen 100-280cm <br>
     <strong>Vikt:</strong> Hona 60-100kg, hane: 100-340kg<br>
@@ -90,13 +93,13 @@ const animals = {
     <strong>Föda:</strong>Blad, kvistar (särskilt från asp, rönn, sälg) och unga tallar<br>
     <strong>Rolig fakta:</strong> Björnar kan springa upp till 56-70 km/h och är mycket duktiga simmare. Den har ett fenomenalt luktsinne och skarp hörsel. De ställer sig ofta på bakbenen för  att ta reda på vad den har framför sig och få en bättre doftbild av närområdet. Detta är inte ett hotbeteende.<br>
   `,
-  image: "img/barnåvildsvin.png",
+  image: "img/barnbjörnm.png",
   video: "https://www.youtube.com/watch?v=1lJw7V77PhE",
   marker:"img/bjornskylt.png"
 },
 fjallrav: {
   name: "Fjällräv",
-  icons:["img/icon1.png","img/icon2.png","img/icon3.png","img/icon4.png"],
+  icons:["img/realfjallrav.png","img/icon2.png","img/icon3.png","img/icon4.png"],
   text: `
     <strong>Storlek:</strong> Kroppen är 41-68cm lång och svansen 26-50cm.<br>
     <strong>Vikt:</strong> 1,5-8 kg<br>
@@ -104,41 +107,41 @@ fjallrav: {
     <strong>Föda:</strong>Smådjur som lämlar och fåglar. På sommaren äter den även bär och på vintern är döda djur viktiga för att den ska överleva<br>
     <strong>Rolig fakta:</strong> Fjällräven är anpassad för att leva i kalla klimat och kan tack vare sin tjocka päls klara sig bra i kyla så kallt som till -40 grader.<br>
   `,
-  image: "img/barnåvildsvin.png",
+  image: "img/barnafrallravm.png",
   video: "https://www.youtube.com/watch?v=ORH9jlWugdc",
   marker:"img/fjallravskylt.png"
 },
 gravling: {
   name: "Grävling",
-  icons:["img/icon1.png","img/icon2.png","img/icon3.png","img/icon4.png"],
+  icons:["img/realgravling.png","img/icon2.png","img/icon3.png","img/icon4.png"],
   text: `
     <strong>Storlek:</strong> Längd 60-90cm<br>
     <strong>Vikt:</strong> 7-15 kg<br>
     <strong>Livsmiljö:</strong> Gryt (hålor i marken som de gräver själva, ofta i skogar eller vid ängar).<br>
     <strong>Föda:</strong> Allätare, maskar, insekter, bär, frukt, grodor och ibland små gnagare.<br>
-    <strong>Rolig fakta:</strong> Grävlingen är ett nattaktivt djur som är känd för sin starka kroppsbyggnad och sina kraftiga klor, vilka den använder för att gräva komplexa underjordiska bon. Den har en karakteristisk svartvit ansiktsmask och en tjock päls som skyddar den mot kyla. Grävlingen är allätare och livnär sig på en varierad kost bestående av insekter, smådjur, frukt och rötter.<br>
+    <strong>Rolig fakta:</strong> Grävlingen är ett nattaktivt djur som är känd för sin starka kroppsbyggnad och sina kraftiga klor, vilka den använder för att gräva komplexa underjordiska bon. Den har en karakteristisk svartvit ansiktsmask och en tjock päls som skyddar den mot kyla.<br>
   `,
-  image: "img/barnåvildsvinh2.png",
+  image: "img/barnågrävlingmt.png",
   video: "https://www.youtube.com/watch?v=pvnMmznREWQ",
   marker:"img/gravlingskylt.png"
 },
 lo: {
   name: "Lo",
-  icons:["img/icon1.png","img/icon2.png","img/icon3.png","img/icon4.png"],
+  icons:["img/reallodjur.png","img/icon2.png","img/icon3.png","img/icon4.png"],
   text: `
-    <strong>Storlek:</strong> 80-130cm<br>
+    <strong>Storlek:</strong>Längd: 70-115cm Höjd: 60-70cm<br>
     <strong>Vikt:</strong> 15-30 kg<br>
     <strong>Livsmiljö:</strong> Skogsområden, de har inget eget bo<br>
     <strong>Föda:</strong> Rådjur, harar, fåglar och ibland renar<br>
     <strong>Rolig fakta:</strong> Lodjuret är ett av de största kattdjuren i Europa. Det är ett skickligt rovdjur som främst jagar rådjur och harar. Lodjuret är känt för sina karakteristiska tofsar på öronen och sin korta svans med svart spets. Det är ett ensamt djur som är mest aktivt under skymning och gryning.<br>
   `,
-  image: "img/barnåvildsvin.png",
+  image: "img/barnalom.png",
   video: "https://www.youtube.com/watch?v=FfWjnuBFu_8",
   marker:"img/lodjurskylt.png"
 },
 nabbmus: {
   name: "Näbbmus",
-  icons:["img/icon1.png","img/icon2.png","img/icon3.png","img/icon4.png"],
+  icons:["img/realnabbmus.png","img/icon2.png","img/icon3.png","img/icon4.png"],
   text: `
     <strong>Storlek:</strong> Kroppen är 5,4-8,7cm och svansen är 3,2-5,6cm (60-80% av näbbmusens längd)<br>
     <strong>Vikt:</strong> 50–150 kg<br>
@@ -146,13 +149,13 @@ nabbmus: {
     <strong>Föda:</strong> Insekter och deras larver, spindlar, gråsuggor och daggmaskar<br>
     <strong>Rolig fakta:</strong> Näbbmusen är ett av de vanligaste däggdjuren i Sverige. Varje dygn behöver den äta mer än vad den väger för att inte svälta ihjäl, den kan svälta ihjäl på två timmar.<br>
   `,
-  image: "img/barnåvildsvin.png",
+  image: "img/barnanabbmusm.png",
   video: "https://www.youtube.com/watch?v=KOMWE-f4eeU",
   marker:"img/musskylt.png"
 },
 jarv: {
   name: "Järv",
-  icons:["img/icon1.png","img/icon2.png","img/icon3.png","img/icon4.png"],
+  icons:["img/realjarv.png","img/icon2.png","img/icon3.png","img/icon4.png"],
   text: `
     <strong>Storlek:</strong>Den är 35-45cm hög<br>
     <strong>Vikt:</strong> 50–150 kg<br>
@@ -160,7 +163,7 @@ jarv: {
     <strong>Föda:</strong> Den är asätare och lever på ren och älgkadaver som varg eller lodjur lämnat efter sig. Den kan fälla en ren själv om det är skare på snön<br>
     <strong>Rolig fakta:</strong> Den kan springa i 45kg/h och har platta tassar som fungerar som snöskor. Den är duktig på att klättra i träd och simma.
   `,
-  image: "img/barnåjärv.png",
+  image: "img/barnåjarvh2.png",
   video: "https://www.youtube.com/watch?v=BL-oBJVvRd0",
   marker:"img/jarvskylt.png"
 },
@@ -249,7 +252,9 @@ function showAnimal(key) {
 function showAnimalInPanel(info) {
 
   const iconHtml = (info.icons || [])
-    .map(src => `<img src="${src}">`)
+    .map(src => `<img class="popup-icon" src="${src}">`)
+
+
     .join("");
 
   const html = `
@@ -263,6 +268,41 @@ function showAnimalInPanel(info) {
       </div>
     </div>
   `;
+
+  document.getElementById("popup-panel").innerHTML = html;
+}
+
+function showAnimalsInCounty(feature) {
+
+  const animalKeys = feature.properties.animals;
+
+  if (!animalKeys || animalKeys.length === 0) {
+    document.getElementById("popup-panel").innerHTML = `
+      <h2>Inga djur registrerade</h2>
+      <p>Det här länet har inga djur kopplade i GeoJSON-filen.</p>
+    `;
+    return;
+  }
+
+  // Bygg lista över djur
+  let html = `
+    <h2>Djur i ${feature.properties.name}</h2>
+    <div class="county-animal-list">
+  `;
+
+  animalKeys.forEach(key => {
+    const info = animals[key];
+    if (!info) return;
+
+    html += `
+      <div class="county-animal-item" onclick="showAnimal('${key}')">
+        <img src="${info.marker}" class="county-animal-icon">
+        <span>${info.name}</span>
+      </div>
+    `;
+  });
+
+  html += `</div>`;
 
   document.getElementById("popup-panel").innerHTML = html;
 }
