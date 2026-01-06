@@ -69,12 +69,12 @@ html, body {
 .animal-top-images {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .animal-top-images img {
-  width: 60px;
-  height: 60px;
+  width: 120px;
+  height: 120px;
   object-fit: contain;
 }
 
@@ -87,18 +87,27 @@ html, body {
 }
 
 .animal-main-image img {
-  width: 100%;
-  max-width: 260px;
+  width: auto;
+  max-height: 230px;
   height: auto;
   display: block;
-  border-radius: 10px;
-  margin-bottom: 12px;
+  height: auto;
+ object-fit: contain;
+  margin: 0 auto;
 }
-
+.media-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1px;
+  margin-top: 15px;
+ 
+  margin-bottom: 15px;
+}
 .animal-video a {
   display: block;
   text-align: center;
-  padding: 10px;
+  padding: 3px;
   background: #3A5A40;
   color: white;
   border-radius: 8px;
@@ -106,9 +115,23 @@ html, body {
   font-weight: bold;
 }
 
-.animal-video a:hover {
-  background: #26412b;
+
+.animal-video iframe {
+  width: 100%;
+  max-width: 320px;
+  height: 240px;
+  border: 6px solid #8B6F47; /* träfärg */
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  background-color: #fdf8f0;
 }
+.animal-video {
+  margin-top: 15px;
+  margin-bottom: 2px;
+  display: flex;
+  justify-content: center;
+}
+
 .popup-icon {
   width: 55px;
   height: 55px;
@@ -118,7 +141,7 @@ html, body {
 }
 
 .popup-icon:hover {
-  transform: scale(2.5) rotate(-2deg);
+  transform: scale(2.5);
   z-index: 10;
   position: relative;
 }
@@ -150,13 +173,13 @@ html, body {
 }
 
 .animal-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.25);
 }
 
 /* Själva lappen */
 .note-background {
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   background-image: url('img/lapp.png');
   background-size: contain;
   background-repeat: no-repeat;
@@ -212,7 +235,7 @@ html, body {
 .county-animal-item {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 5px;
   background: #8FBF8F;
   padding: 10px;
   border-radius: 8px;
@@ -221,12 +244,12 @@ html, body {
 }
 
 .county-animal-item:hover {
-  transform: scale(1.03);
+  transform: scale(1.25);
 }
 
 .county-animal-icon {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
 }
 
@@ -240,5 +263,11 @@ html, body {
 @media (max-width: 600px) {
   .animal-main-image img {
     max-width: 170px;
+  }
+}
+@media (max-width: 900px) {
+  .media-row {
+    flex-direction: column;
+    align-items: center;
   }
 }

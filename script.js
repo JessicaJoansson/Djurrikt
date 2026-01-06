@@ -255,7 +255,7 @@ function showAnimal(key) {
 
 
 // ------------------------------------------------------
-// 6. Funktion: Visa popup-innehåll
+// 6. Funktion: Visa popup-innehåll på skärmen
 // ------------------------------------------------------
 function showAnimalInPanel(info) {
 
@@ -270,16 +270,20 @@ function showAnimalInPanel(info) {
       <h2>${info.name}</h2>
       <div class="animal-top-images">${iconHtml}</div>
       <div class="animal-info">${info.text}</div>
-      <div class="animal-main-image"><img src="${info.image}"></div>
+      <div class="media-row">
+  <div class="animal-main-image">
+    <img src="${info.image}">
+  </div>
 
-      <div class="animal-video">
-        <iframe 
-          src="${embedUrl}"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-      </div>
-    </div>
+  <div class="animal-video">
+    <iframe 
+      src="${embedUrl}"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
   `;
 
   document.getElementById("popup-panel").innerHTML = html;

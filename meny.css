@@ -1,6 +1,7 @@
 .menu-start img {
-  width: 160px;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
   transition: transform 0.3s ease;
 }
 
@@ -12,26 +13,30 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: #fffffe;
+    background-color: rgba(255, 255, 255, 0.2); /* <-- transparent vit */
     display: flex;
-    justify-content: center; /* Centrera innehållet horisontellt */
+    justify-content: center;
+    backdrop-filter: blur(4px); /* valfritt men väldigt snyggt */
 }
+
 
 li {
     margin: 0 10px; /* Lite mellanrum mellan menyobjekt */
 }
 
 li a {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 30px 35px; /* Lite större klickyta */
-    text-decoration: none;
-    font-size: 25px; /* Större text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;   /* bestäm boxens storlek */
+  height: 160px;  /* kvadrat = snyggast */
+  padding: 0;     /* ta bort padding som förstör layouten */
+  text-decoration: none;
 }
 
+
 li a:hover {
-    background-color: #d3dfd3;
+    background-color: rgba(255, 255, 255, 0.2);;
 }
 
 .startpage{
