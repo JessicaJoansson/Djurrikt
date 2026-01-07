@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<title>Gissa bajset</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="meny.css" />
+<link rel="stylesheet" href="gissabajset.css">
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<body class="startpage">
+  
+ <ul>
+    <li><a href="start.html" class="menu-start"><img src="img/Start3.png" alt="Startsida"></a></li>
+    <li><a href="index.html" class="menu-start"><img src="img/Djurkarta.png" alt="Djur i Sverige"></a></li>
+    <li><a href="ValjSpel.html" class="menu-start"><img src="img/Djurspel1.png" alt="Djur Spel"></a></li>
+    <li><a href="hitta.html" class="menu-start"><img src="img/sok.png" alt="Sök"></a></li>
+  </ul>
+
+</head>
+<body>
+<img src="img/Gissabajset.png" width="200">
+<br>
+    <div id="game-container">
+        <div class="poop-image-container">
+            <img id="question-image" src="" alt="Vems hög?">
+        </div>
+        <p>Vem har bajsat här?</p>
+        <div id="options-grid" class="options-grid">
+            </div>
+        <div id="score-display">Poäng: <span id="score">0</span> / 8</div>
+    </div>
+
+    <div id="end-screen" class="hidden">
+        <h2>Spelet är slut!</h2>
+        <p>Du fick <span id="final-score"></span> av 8 möjliga poäng!</p>
+        <button id="restart-btn" onclick="location.reload()">Spela igen</button>
+    </div>
+
+    <div id="fact-modal" class="modal">
+    <div class="fact-content"> <h2>Rätt svarat!</h2>
+           <h3 id="modal-animal-name">Djurnamn</h3>
+            <img id="modal-animal-img" src="" alt="Djuret">
+            <div class="fun-fact-box">
+                💡 <strong>Rolig fakta:</strong><br>
+                <br>
+                <span id="modal-fact-text">Faktan kommer här...</span>
+            </div>
+            <br>
+            <button id="next-btn"><img src="img/nastafraga.png" width="150"></button>
+        </div>
+    </div>
+
+<div id="win-modal" class="modal-overlay">
+    <div class="win-content"> <h2>GRATTIS!</h2>
+        <p>Du är en riktig bajs-expert!</p>
+        <p style="font-size: 1.2rem;">Du fick <span id="win-score">8</span> av 8 rätt!</p>
+       <button onclick="location.reload()" class="modal-btn-orange">Spela igen</button>
+    </div>
+</div>
+
+    <script src="gissabajset.js"></script>
+</body>
+</html>

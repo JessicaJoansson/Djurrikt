@@ -1,3 +1,13 @@
+h2 {
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Nunito', Arial, sans-serif;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #2f4f2f;               /* skogsgrön ton */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
 .menu-start img {
   width: 100%;
   height: 100%;

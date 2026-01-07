@@ -68,6 +68,7 @@ const animals = {
     text: `
       <strong>Storlek:</strong> Hanarna kan bli 1,8m långa och 1,1m höga<br>
       <strong>Vikt:</strong> Hanar ca 200kg, honorna är lite lättare.<br>
+      <strong>Livslängd:</strong> 4-8 år i det vilda<br>
       <strong>Livsmiljö:</strong> Skogar, jordbruksområden<br>
       <strong>Föda:</strong> Rötter, frukt, smådjur<br>
       <strong>Rolig fakta:</strong> De lever i grupper som kallas "galtar". Den älsta suggan (honan) bestämmer över flocken.<br>
@@ -83,6 +84,7 @@ const animals = {
     text: `
       <strong>Storlek:</strong> Mankhöjd upp till 200cm<br>
       <strong>Vikt:</strong> 200-700kg<br>
+      <strong>Livslängd:</strong> En tjur kan bli ca 10år , en ko kan bli 30 år. <br>
       <strong>Livsmiljö:</strong> Skogar<br>
       <strong>Föda:</strong> Blad, kvistar<br>
       <strong>Rolig fakta:</strong> Kan springa upp till 60km/h.<br>
@@ -97,6 +99,7 @@ const animals = {
   text: `
     <strong>Storlek:</strong> Höjd På alla 4:ca 135cm, på bakbenen 100-280cm <br>
     <strong>Vikt:</strong> Hona 60-100kg, hane: 100-340kg<br>
+    <strong>Livslängd:</strong> 30-40 år i det vilda<br>
     <strong>Livsmiljö:</strong> Idet är ofta en grävd håla under rötter, stenar, myrstackar eller i en berghåla, där den sover vintersömnen från hösten till våren.<br>
     <strong>Föda:</strong>Blad, kvistar (särskilt från asp, rönn, sälg) och unga tallar<br>
     <strong>Rolig fakta:</strong> Björnar kan springa upp till 56-70 km/h och är mycket duktiga simmare. Den har ett fenomenalt luktsinne och skarp hörsel. De ställer sig ofta på bakbenen för  att ta reda på vad den har framför sig och få en bättre doftbild av närområdet. Detta är inte ett hotbeteende.<br>
@@ -111,6 +114,7 @@ fjallrav: {
   text: `
     <strong>Storlek:</strong> Kroppen är 41-68cm lång och svansen 26-50cm.<br>
     <strong>Vikt:</strong> 1,5-8 kg<br>
+    <strong>Livslängd:</strong> 7-8 år i det vilda<br>
     <strong>Livsmiljö:</strong> Skogar, jordbruksområden<br>
     <strong>Föda:</strong>Smådjur som lämlar och fåglar. På sommaren äter den även bär och på vintern är döda djur viktiga för att den ska överleva<br>
     <strong>Rolig fakta:</strong> Fjällräven är anpassad för att leva i kalla klimat och kan tack vare sin tjocka päls klara sig bra i kyla så kallt som till -40 grader.<br>
@@ -125,6 +129,7 @@ gravling: {
   text: `
     <strong>Storlek:</strong> Längd 60-90cm<br>
     <strong>Vikt:</strong> 7-15 kg<br>
+    <strong>Livslängd:</strong> 4-6 år i det vilda, men kan bli äldre<br>
     <strong>Livsmiljö:</strong> Gryt (hålor i marken som de gräver själva, ofta i skogar eller vid ängar).<br>
     <strong>Föda:</strong> Allätare, maskar, insekter, bär, frukt, grodor och ibland små gnagare.<br>
     <strong>Rolig fakta:</strong> Grävlingen är ett nattaktivt djur som är känd för sin starka kroppsbyggnad och sina kraftiga klor, vilka den använder för att gräva komplexa underjordiska bon. Den har en karakteristisk svartvit ansiktsmask och en tjock päls som skyddar den mot kyla.<br>
@@ -139,6 +144,7 @@ lo: {
   text: `
     <strong>Storlek:</strong>Längd: 70-115cm Höjd: 60-70cm<br>
     <strong>Vikt:</strong> 15-30 kg<br>
+    <strong>Livslängd:</strong> 10-15 år i det vilda<br>
     <strong>Livsmiljö:</strong> Skogsområden, de har inget eget bo<br>
     <strong>Föda:</strong> Rådjur, harar, fåglar och ibland renar<br>
     <strong>Rolig fakta:</strong> Lodjuret är ett av de största kattdjuren i Europa. Det är ett skickligt rovdjur som främst jagar rådjur och harar. Lodjuret är känt för sina karakteristiska tofsar på öronen och sin korta svans med svart spets. Det är ett ensamt djur som är mest aktivt under skymning och gryning.<br>
@@ -152,7 +158,8 @@ nabbmus: {
   icons:["img/realnabbmus.png","img/nabbmusspar.png","img/nabbmusbajs.png","img/nabbmusbaby.jpeg"],
   text: `
     <strong>Storlek:</strong> Kroppen är 5,4-8,7cm och svansen är 3,2-5,6cm (60-80% av näbbmusens längd)<br>
-    <strong>Vikt:</strong> 50–150 kg<br>
+    <strong>Vikt:</strong> Mellan 3,5 och 16 gram kg<br>
+    <strong>Livslängd:</strong> Ungefär 1 år i det vilda<br>
     <strong>Livsmiljö:</strong> Bygger bo av mossa, gräs ochlöv. Ligger gömt under en stubbe eller på en annan trygg plats.<br>
     <strong>Föda:</strong> Insekter och deras larver, spindlar, gråsuggor och daggmaskar<br>
     <strong>Rolig fakta:</strong> Näbbmusen är ett av de vanligaste däggdjuren i Sverige. Varje dygn behöver den äta mer än vad den väger för att inte svälta ihjäl, den kan svälta ihjäl på två timmar.<br>
@@ -167,6 +174,7 @@ jarv: {
   text: `
     <strong>Storlek:</strong>Den är 35-45cm hög<br>
     <strong>Vikt:</strong> 50–150 kg<br>
+    <strong>Livslängd:</strong> 6-10 år i det vilda<br>
     <strong>Livsmiljö:</strong>Lya i en sluttning med packad snö eller i skogen i rotvältor eller klippblock. I anslutning till lyan finns det ett flertal gångar med olika platser att ligga på och även en toalett<br>
     <strong>Föda:</strong> Den är asätare och lever på ren och älgkadaver som varg eller lodjur lämnat efter sig. Den kan fälla en ren själv om det är skare på snön<br>
     <strong>Rolig fakta:</strong> Den kan springa i 45kg/h och har platta tassar som fungerar som snöskor. Den är duktig på att klättra i träd och simma.
