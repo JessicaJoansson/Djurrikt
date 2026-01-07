@@ -8,6 +8,15 @@ html, body {
   font-family: 'Nunito', Arial, sans-serif;
   background-color: rgb(138, 194, 139);
 }
+h2 {
+  text-align: center;
+  font-size: 36px;
+  font-family: 'Nunito', Arial, sans-serif;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #2f4f2f;               /* skogsgrön ton */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
 
 /* ===========================
    LAYOUT
@@ -269,5 +278,11 @@ html, body {
   .media-row {
     flex-direction: column;
     align-items: center;
+  }
+}
+/*justerar textstorlek på rubriker för mindre skärmar*/
+@media (max-width: 900px) {
+  h2 {
+    font-size: 28px;
   }
 }
