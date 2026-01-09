@@ -7,9 +7,8 @@
 <link rel="stylesheet" href="meny.css" />
 <link rel="stylesheet" href="paraihop.css">
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-</head>
-<body class="startpage">
 
+<body class="startpage">
  <ul>
     <li><a href="start.html" class="menu-start"><img src="img/Start3.png" alt="Startsida"></a></li>
     <li><a href="index.html" class="menu-start"><img src="img/Djurkarta.png" alt="Djur i Sverige"></a></li>
@@ -17,7 +16,11 @@
     <li><a href="hitta.html" class="menu-start"><img src="img/sok.png" alt="Sök"></a></li>
   </ul>
 
- <h1 style="text-align: center;">Välj ett tassavtryck och dra till rätt djur!</h1>
+</head>
+
+<body>
+<img src="img/ParaIhop.png" width="200">
+<h1>Dra tassavtrycket till rätt djur</h1>
 <div class="game-container">
 <div class="row draggables">
 <div class="item" draggable="true" id="tass-lo" data-match="lo">
@@ -56,13 +59,6 @@
 <div class="dropzone" data-animal="fjallrav"><img src="img/realfjallrav.png" width="150"></div>
 <div class="dropzone" data-animal="nabbmus"><img src="img/realnabbmus.png" width="150"></div>
 </div></div>
-
-<div style="display: flex; justify-content: center; margin-top: 50px;">
-
-<a href="ParaIhop.html">
-<img src="img/SpelaIgen.png" width="200" style="border-radius: 10px;" alt="Spel 1">
-</a>
-</div>
 
 <div id="win-modal" class="modal-overlay">
 <div class="modal-content">

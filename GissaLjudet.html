@@ -7,23 +7,24 @@
 <link rel="stylesheet" href="meny.css" />
 <link rel="stylesheet" href="gissaljudet.css">
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-</head>
+
 <body class="startpage">
   
-   <ul>
+ <ul>
     <li><a href="start.html" class="menu-start"><img src="img/Start3.png" alt="Startsida"></a></li>
     <li><a href="index.html" class="menu-start"><img src="img/Djurkarta.png" alt="Djur i Sverige"></a></li>
     <li><a href="ValjSpel.html" class="menu-start"><img src="img/Djurspel1.png" alt="Djur Spel"></a></li>
     <li><a href="hitta.html" class="menu-start"><img src="img/sok.png" alt="Sök"></a></li>
   </ul>
-  
 
-
-
+</head>
+<body>
+<img src="img/VemLater.png" width="200">
+<br>
+<br>
+<p id="feedback" onclick="playCurrentSound()" style="cursor: pointer;"></p>
 <div class="quiz-box">
-<div class="play-container">
-<img src="img/vemlater.png" width="200" style="border-radius: 10px; display: block; margin: 80px auto 20px auto;" id="play-img" onclick="playCurrentSound()" alt="Spela ljud">
-</div>
+<div class="quiz-container">
 
 <div class="animal-row">
 <img src="img/reallodjur.png" onclick="guess('lo')" id="btn-lo">
@@ -32,14 +33,6 @@
 <img src="img/realjarv.png" onclick="guess('jarv')" id="btn-jarv">
 <img src="img/realvildsvin.png" onclick="guess('vildsvin')" id="btn-vildsvin">
 <img src="img/realgravling.png" onclick="guess('gravling')" id="btn-gravling">
-</div>
-
-<p id="feedback"></p>
-
-<div style="display: flex; justify-content: center; margin-top: 50px;">
-<a href="GissaLjudet.html">
-<img src="img/SpelaIgen.png" width="200" style="border-radius: 10px;" alt="Spel 1">
-</a>
 </div>
 
 <div id="win-modal" class="modal-overlay">

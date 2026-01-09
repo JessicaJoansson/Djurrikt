@@ -158,9 +158,9 @@ nabbmus: {
   icons:["img/realnabbmus.png","img/nabbmusspar.png","img/nabbmusbajs.png","img/nabbmusbaby.jpeg"],
   text: `
     <strong>Storlek:</strong> Kroppen är 5,4-8,7cm och svansen är 3,2-5,6cm (60-80% av näbbmusens längd)<br>
-    <strong>Vikt:</strong> Mellan 3,5 och 16 gram kg<br>
+    <strong>Vikt:</strong> Mellan 3,5 och 16 gram<br>
     <strong>Livslängd:</strong> Ungefär 1 år i det vilda<br>
-    <strong>Livsmiljö:</strong> Bygger bo av mossa, gräs ochlöv. Ligger gömt under en stubbe eller på en annan trygg plats.<br>
+    <strong>Livsmiljö:</strong> Bygger bo av mossa, gräs och löv. Ligger gömt under en stubbe eller på en annan trygg plats.<br>
     <strong>Föda:</strong> Insekter och deras larver, spindlar, gråsuggor och daggmaskar<br>
     <strong>Rolig fakta:</strong> Näbbmusen är ett av de vanligaste däggdjuren i Sverige. Varje dygn behöver den äta mer än vad den väger för att inte svälta ihjäl, den kan svälta ihjäl på två timmar.<br>
   `,
