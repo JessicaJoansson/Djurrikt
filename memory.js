@@ -99,7 +99,7 @@ function showWinPopUp() {
     const particleCount = 50 * (timeLeft / duration);
         
     confetti(Object.assign({}, defaults, { 
-    articleCount, 
+    particleCount, 
     origin: { x: Math.random(), y: Math.random() - 0.2 },
     scalar: 1.2,
     colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ffffff'] 

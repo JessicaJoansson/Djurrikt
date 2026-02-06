@@ -5,7 +5,7 @@ const animalsData = [
     { name: "Näbbmus", poopImg: "img/nabbmusbajs.png", animalImg: "img/nabbmus.png", fact: "Varje dygn behöver näbbmusen äta mer än vad den väger för att inte svälta ihjäl, kan svälta ihjäl på två timmar. " },
     { name: "Grävling", poopImg: "img/gravlingbajs.png", animalImg: "img/gravling.png", fact: "Grävlingar är väldigt rena djur. De bajsar inte i sitt bo utan har en särskild plats utanför" },
     { name: "Lodjur", poopImg: "img/lodjurbajs.png", animalImg: "img/lo.png", fact: "Lodjur har tofsar på öronen som inte bara är snygga – de fungerar som små “antennförlängare” som hjälper dem att höra bättre. Typ naturens egen Wi-Fi-router med päls." },
-    { name: "Vildsvin", poopImg: "img/vildsvinbajs.png", animalImg: "img/vildsvinet.png", fact: "Ett vildsvin kan springa i upp till 50kg/h, de lever i grupper som kallas för sounders och kommunicerar med olika ljud." },
+    { name: "Vildsvin", poopImg: "img/vildsvinbajs.png", animalImg: "img/vildsvinet.png", fact: "Ett vildsvin kan springa i upp till 50km/h, de lever i grupper som kallas för sounders och kommunicerar med olika ljud." },
     { name: "Björn", poopImg: "img/bjornbajs.png", animalImg: "img/bjorn.png", fact: "Björnar är duktiga klättrare och goda simmare, även om vuxna björnar undviker att klättra i träd." }
 ];
 
